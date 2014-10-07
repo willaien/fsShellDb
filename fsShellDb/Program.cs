@@ -73,10 +73,10 @@ namespace fsShellDb
                     case "ls":
                         if (_db != null)
                         {
-                            IEnumerable<MongoGridFSFileInfo> query = from file in _db.FindAll()
+                            var query = from file in _db.FindAll()
                                 where file.Name.StartsWith(_currentdirectory)
                                 select file;
-                            foreach (MongoGridFSFileInfo file in query)
+                            foreach (var file in query)
                                 Console.WriteLine("  " + file.Name);
                         }
                         break;
