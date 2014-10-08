@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -43,9 +42,9 @@ namespace fsShellDb
                         {
                             if (result[1] == "..")
                             {
-                                string[] sarray = _currentdirectory.Split('/').Where(x => x != "").ToArray();
-                                string str = "/";
-                                for (int i = 0; i < sarray.Length - 1; i++)
+                                var sarray = _currentdirectory.Split('/').Where(x => x != "").ToArray();
+                                var str = "/";
+                                for (var i = 0; i < sarray.Length - 1; i++)
                                 {
                                     str += sarray[i] + "/";
                                 }
